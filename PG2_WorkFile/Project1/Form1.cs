@@ -16,5 +16,10 @@ namespace Project1
         {
             InitializeComponent();
         }
+
+        private void rollButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
