@@ -44,7 +44,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.classBox = new System.Windows.Forms.ComboBox();
             this.raceBox = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ageCount = new System.Windows.Forms.NumericUpDown();
             this.lastNameBox = new System.Windows.Forms.TextBox();
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -62,13 +62,14 @@
             this.dexCount = new System.Windows.Forms.NumericUpDown();
             this.strCount = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.classSpecific1 = new System.Windows.Forms.Label();
             this.classSpecific2 = new System.Windows.Forms.Label();
+            this.classSpecific1 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.charList = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ageCount)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisCount)).BeginInit();
@@ -105,12 +106,14 @@
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // actionsToolStripMenuItem
             // 
@@ -127,18 +130,21 @@
             this.addCharacterToolStripMenuItem.Name = "addCharacterToolStripMenuItem";
             this.addCharacterToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.addCharacterToolStripMenuItem.Text = "Add Character";
+            this.addCharacterToolStripMenuItem.Click += new System.EventHandler(this.addCharacterToolStripMenuItem_Click);
             // 
             // editCharacterToolStripMenuItem
             // 
             this.editCharacterToolStripMenuItem.Name = "editCharacterToolStripMenuItem";
             this.editCharacterToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.editCharacterToolStripMenuItem.Text = "Edit Character";
+            this.editCharacterToolStripMenuItem.Click += new System.EventHandler(this.editCharacterToolStripMenuItem_Click);
             // 
             // removeCharacterToolStripMenuItem
             // 
             this.removeCharacterToolStripMenuItem.Name = "removeCharacterToolStripMenuItem";
             this.removeCharacterToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.removeCharacterToolStripMenuItem.Text = "Remove Character";
+            this.removeCharacterToolStripMenuItem.Click += new System.EventHandler(this.removeCharacterToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -149,7 +155,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.classBox);
             this.groupBox1.Controls.Add(this.raceBox);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.ageCount);
             this.groupBox1.Controls.Add(this.lastNameBox);
             this.groupBox1.Controls.Add(this.firstNameBox);
             this.groupBox1.Location = new System.Drawing.Point(13, 32);
@@ -237,12 +243,12 @@
             this.raceBox.Size = new System.Drawing.Size(100, 24);
             this.raceBox.TabIndex = 3;
             // 
-            // numericUpDown1
+            // ageCount
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(81, 76);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 22);
-            this.numericUpDown1.TabIndex = 2;
+            this.ageCount.Location = new System.Drawing.Point(81, 76);
+            this.ageCount.Name = "ageCount";
+            this.ageCount.Size = new System.Drawing.Size(100, 22);
+            this.ageCount.TabIndex = 2;
             // 
             // lastNameBox
             // 
@@ -406,14 +412,21 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Class Specific";
             // 
-            // comboBox1
+            // classSpecific2
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(81, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 24);
-            this.comboBox1.TabIndex = 10;
+            this.classSpecific2.AutoSize = true;
+            this.classSpecific2.Location = new System.Drawing.Point(6, 51);
+            this.classSpecific2.Name = "classSpecific2";
+            this.classSpecific2.Size = new System.Drawing.Size(0, 17);
+            this.classSpecific2.TabIndex = 18;
+            // 
+            // classSpecific1
+            // 
+            this.classSpecific1.AutoSize = true;
+            this.classSpecific1.Location = new System.Drawing.Point(6, 24);
+            this.classSpecific1.Name = "classSpecific1";
+            this.classSpecific1.Size = new System.Drawing.Size(0, 17);
+            this.classSpecific1.TabIndex = 17;
             // 
             // comboBox2
             // 
@@ -424,27 +437,31 @@
             this.comboBox2.Size = new System.Drawing.Size(100, 24);
             this.comboBox2.TabIndex = 11;
             // 
-            // classSpecific1
+            // comboBox1
             // 
-            this.classSpecific1.AutoSize = true;
-            this.classSpecific1.Location = new System.Drawing.Point(6, 24);
-            this.classSpecific1.Name = "classSpecific1";
-            this.classSpecific1.Size = new System.Drawing.Size(0, 17);
-            this.classSpecific1.TabIndex = 17;
+            this.comboBox1.Enabled = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(81, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 24);
+            this.comboBox1.TabIndex = 10;
             // 
-            // classSpecific2
+            // charList
             // 
-            this.classSpecific2.AutoSize = true;
-            this.classSpecific2.Location = new System.Drawing.Point(6, 51);
-            this.classSpecific2.Name = "classSpecific2";
-            this.classSpecific2.Size = new System.Drawing.Size(0, 17);
-            this.classSpecific2.TabIndex = 18;
+            this.charList.FormattingEnabled = true;
+            this.charList.ItemHeight = 16;
+            this.charList.Location = new System.Drawing.Point(216, 32);
+            this.charList.Name = "charList";
+            this.charList.Size = new System.Drawing.Size(304, 484);
+            this.charList.TabIndex = 17;
+            this.charList.SelectedIndexChanged += new System.EventHandler(this.charList_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 533);
+            this.Controls.Add(this.charList);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -456,7 +473,7 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ageCount)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.charCount)).EndInit();
@@ -490,7 +507,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox classBox;
         private System.Windows.Forms.ComboBox raceBox;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown ageCount;
         private System.Windows.Forms.TextBox lastNameBox;
         private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -512,6 +529,7 @@
         private System.Windows.Forms.Label classSpecific1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox charList;
     }
 }
 
