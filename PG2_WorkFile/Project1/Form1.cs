@@ -109,7 +109,7 @@ namespace Project1
 
         private void editCharacterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            charList.Items.Remove(charList.SelectedIndex);
+            charList.Items.Remove(charList.SelectedItem);
             charList.Refresh();
             Objects.Class charClass;
             Objects.Class.classes classSelection = (Objects.Class.classes)classBox.SelectedIndex;
@@ -172,7 +172,7 @@ namespace Project1
 
         private void removeCharacterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            charList.Items.Remove(charList.SelectedIndex);
+            charList.Items.Remove(charList.SelectedItem);
             charList.Refresh();
         }
 
@@ -188,7 +188,13 @@ namespace Project1
 
         private void charList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            (charList.SelectedItem as Character).writeToForm();
+            try
+            {
+                (charList.SelectedItem as Character).writeToForm();
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }
