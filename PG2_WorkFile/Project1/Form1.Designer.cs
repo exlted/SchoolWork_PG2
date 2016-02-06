@@ -62,6 +62,9 @@
             this.dexCount = new System.Windows.Forms.NumericUpDown();
             this.strCount = new System.Windows.Forms.NumericUpDown();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.classChoice2Label = new System.Windows.Forms.Label();
+            this.classChoice1Label = new System.Windows.Forms.Label();
+            this.classCount1 = new System.Windows.Forms.NumericUpDown();
             this.classSpecific2 = new System.Windows.Forms.Label();
             this.classSpecific1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -78,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dexCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.strCount)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classCount1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -227,6 +231,7 @@
             this.classBox.Name = "classBox";
             this.classBox.Size = new System.Drawing.Size(100, 24);
             this.classBox.TabIndex = 4;
+            this.classBox.SelectedIndexChanged += new System.EventHandler(this.classBox_SelectedIndexChanged);
             // 
             // raceBox
             // 
@@ -358,6 +363,7 @@
             this.charCount.ReadOnly = true;
             this.charCount.Size = new System.Drawing.Size(100, 22);
             this.charCount.TabIndex = 5;
+            this.charCount.TabStop = false;
             // 
             // wisCount
             // 
@@ -366,6 +372,7 @@
             this.wisCount.ReadOnly = true;
             this.wisCount.Size = new System.Drawing.Size(100, 22);
             this.wisCount.TabIndex = 4;
+            this.wisCount.TabStop = false;
             // 
             // intCount
             // 
@@ -374,6 +381,7 @@
             this.intCount.ReadOnly = true;
             this.intCount.Size = new System.Drawing.Size(100, 22);
             this.intCount.TabIndex = 3;
+            this.intCount.TabStop = false;
             // 
             // constCount
             // 
@@ -382,6 +390,7 @@
             this.constCount.ReadOnly = true;
             this.constCount.Size = new System.Drawing.Size(100, 22);
             this.constCount.TabIndex = 2;
+            this.constCount.TabStop = false;
             // 
             // dexCount
             // 
@@ -390,6 +399,7 @@
             this.dexCount.ReadOnly = true;
             this.dexCount.Size = new System.Drawing.Size(100, 22);
             this.dexCount.TabIndex = 1;
+            this.dexCount.TabStop = false;
             // 
             // strCount
             // 
@@ -398,9 +408,13 @@
             this.strCount.ReadOnly = true;
             this.strCount.Size = new System.Drawing.Size(100, 22);
             this.strCount.TabIndex = 0;
+            this.strCount.TabStop = false;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.classChoice2Label);
+            this.groupBox3.Controls.Add(this.classChoice1Label);
+            this.groupBox3.Controls.Add(this.classCount1);
             this.groupBox3.Controls.Add(this.classSpecific2);
             this.groupBox3.Controls.Add(this.classSpecific1);
             this.groupBox3.Controls.Add(this.comboBox2);
@@ -411,6 +425,31 @@
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Class Specific";
+            // 
+            // classChoice2Label
+            // 
+            this.classChoice2Label.AutoSize = true;
+            this.classChoice2Label.Location = new System.Drawing.Point(-3, 54);
+            this.classChoice2Label.Name = "classChoice2Label";
+            this.classChoice2Label.Size = new System.Drawing.Size(54, 17);
+            this.classChoice2Label.TabIndex = 21;
+            this.classChoice2Label.Text = "label13";
+            // 
+            // classChoice1Label
+            // 
+            this.classChoice1Label.AutoSize = true;
+            this.classChoice1Label.Location = new System.Drawing.Point(-3, 21);
+            this.classChoice1Label.Name = "classChoice1Label";
+            this.classChoice1Label.Size = new System.Drawing.Size(54, 17);
+            this.classChoice1Label.TabIndex = 20;
+            this.classChoice1Label.Text = "label12";
+            // 
+            // classCount1
+            // 
+            this.classCount1.Location = new System.Drawing.Point(91, 19);
+            this.classCount1.Name = "classCount1";
+            this.classCount1.Size = new System.Drawing.Size(100, 22);
+            this.classCount1.TabIndex = 19;
             // 
             // classSpecific2
             // 
@@ -430,18 +469,16 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.Enabled = false;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(81, 51);
+            this.comboBox2.Location = new System.Drawing.Point(91, 51);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(100, 24);
             this.comboBox2.TabIndex = 11;
             // 
             // comboBox1
             // 
-            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(81, 21);
+            this.comboBox1.Location = new System.Drawing.Point(91, 18);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(100, 24);
             this.comboBox1.TabIndex = 10;
@@ -454,6 +491,7 @@
             this.charList.Name = "charList";
             this.charList.Size = new System.Drawing.Size(304, 484);
             this.charList.TabIndex = 17;
+            this.charList.TabStop = false;
             this.charList.SelectedIndexChanged += new System.EventHandler(this.charList_SelectedIndexChanged);
             // 
             // Form1
@@ -484,6 +522,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.strCount)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.classCount1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,6 +569,9 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox charList;
+        private System.Windows.Forms.NumericUpDown classCount1;
+        private System.Windows.Forms.Label classChoice2Label;
+        private System.Windows.Forms.Label classChoice1Label;
     }
 }
 

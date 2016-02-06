@@ -63,6 +63,7 @@ namespace Project1
             form.intBox.Value = charStats.intelligence;
             form.constBox.Value = charStats.constitution;
             form.charBox.Value = charStats.charisma;
+            charClass.getClassData(form);
         }
     }
 }
