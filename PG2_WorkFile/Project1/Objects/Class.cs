@@ -53,7 +53,6 @@ namespace Project1.Objects
             return "";
         }
     }
-
     class Cleric : Class
     {
         public const string Label1Text = "Rebirth uses";
@@ -80,7 +79,6 @@ namespace Project1.Objects
             return "Cleric";
         }
     }
-
     class Fighter : Class
     {
         public const string Label1Text = "Extra Feats";
