@@ -69,7 +69,7 @@ namespace Lab4
         {
             for (int i = 0; i < inputBox.Text.Length; i++)
             {
-                if (inputBox.Text[i].Equals(','));
+                if (inputBox.Text[i].Equals(','))
                 {
                     MessageBox.Show("Cannot include comma within title");
                     return;
